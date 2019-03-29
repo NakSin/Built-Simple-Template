@@ -1,0 +1,469 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.hide{
+    display: none;
+    background-color: rgba(87, 87, 102, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    z-index: 3;
+}
+.popup{
+    display: none;
+    background-color: white;
+    padding: 30px 0;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+.popup .exit{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    padding: 20px;
+}
+.popup span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px gray solid;
+}
+.popup iframe{
+    padding: 0px 20px;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.header{
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+}
+.logo{
+    flex: 40%;
+}
+.search{
+    flex: 40%;
+    padding-left: 30px;
+}
+.search input{
+    background-color: snow;
+    border: 1px slategrey solid;
+    padding: 7px;
+    width: 100%;
+    position: relative;
+}
+.search button{
+    background-color: snow;
+    position: absolute;
+    left: 54%;
+    top: 4%;
+    border: none;
+}
+.login-language{
+    flex: 60%;
+    padding-top: 6px;
+    padding-left: 35%;
+    display: flex;
+    justify-content: flex-start;
+}
+.login-language a{
+    color: grey;
+    padding-left: 5px;
+}
+.searchloginlanguage{
+    flex: 60%;
+    display: flex;
+    justify-content: flex-start;
+}
+.menu{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+}
+.menu .info{
+    padding-left: 5px;
+}
+.menu>div{
+    flex: 15%;
+    padding: 20px 10px;
+    position: relative;
+}
+.menu>div, .menu span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu div a{
+    color: white;
+}
+.fas{
+    padding-left: 7.3749997px;
+}
+.menu span{
+    padding: 10px;
+}
+.menu ul{
+    display: none;
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    z-index: 1;
+}
+ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+.menu .cinema li, .menu .event li{
+    padding: 20px 15px;
+}
+.menu div div:hover>a, .menu div div:hover>i, .menu div:hover>a, .menu li:hover>a, .review .title:hover a, .review .main:hover .head, .about .title:hover a{
+    color: burlywood;
+}
+.menu div:hover .movie,
+.menu div:hover .cinema,
+.menu div:hover .event,
+.menu .ready div:hover .opa,
+.menu .soon div:hover .opa,
+.movieselect .image:hover .opa,
+.review .main:hover .opa,
+.promotion .image:hover .opa{
+    display: block; 
+}
+.menu .movie{
+    display: none;
+    background-color: black;
+    width: 1145px;
+    position: absolute;
+    top: 100%;
+    left: -12px;
+    z-index: 1;
+}
+.menu .soon .info{
+    padding-bottom: 30px;
+}
+.menu .movie .title{
+    display: inline-block;
+    padding: 30px 0px 20px 15px;
+} 
+.menu .movie .ready, .soon{
+    padding: 0px 10px 0px 10px;
+}
+.menu .movie .ready, .soon{
+    display: flex;
+    justify-content: flex-start;
+}
+.menu .movie .img{
+    flex: 25%;
+    padding: 10px 5px 10px 5px;
+}
+.menu .movie .ready img, .menu .movie .soon img{
+    width: 100%;
+    height: 20vh;
+}
+.menu .ready div, .menu .soon div{
+    position: relative;
+}
+.menu div .opa, .movieselect .image .opa, .review .image .opa, .promotion .image .opa{
+    display: none;
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu .opa .button, .movieselect .image .button, .promotion .image .button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    color: white;
+    border:1px white solid;
+}
+.menu .opa .button:hover, .movieselect .image .opa .button:hover, .more:hover, .promotion .opa .button:hover{
+    border-color: orangered;
+    background-color: orangered;
+}
+.myslider{
+    z-index: 0;
+}
+.myslider .autoslider{
+    position: relative;
+}
+.myslider .autoslider .slider img{
+    width: 100%;
+    height: auto;
+}
+.myslider .autoslider .fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade{
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+@keyframes fade{
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+.myslider .autoslider .play{
+    background-color: rgba(87, 87, 102, 0.8);
+    font-size: 40px;
+    color: white;
+    border: 1px white solid;
+    border-radius: 50px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.myslider .ticket{
+    background-color: rgb(0, 0, 0, 0.5);
+    color: white;
+    width: 27%;
+    font-size: 20px;
+    position: absolute;
+    top: 25%;
+    right: 5%;
+}
+.myslider .ticket .head span{
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 100px;
+}
+.myslider .choose{
+    display: flex;
+    justify-content: flex-start;
+}
+.movieselect .choose{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-left: 25px;
+}
+.choose .type, .type1{
+    padding: 10px 15.8px;
+    border-bottom: 1px white solid;
+    cursor: pointer;
+}
+.choose .active , .active1{
+    color: orangered;
+    border-color: orangered;
+}
+.myslider form select{
+    background-color: rgba(87, 87, 102, 0.8);
+    width: 85%;
+    margin: 10px 26px;
+    padding: 5px;
+}
+.myslider form input[type="button"]{
+    background-color: orangered;
+    border-color: orangered;
+    padding: 10px;
+    margin: 20px 0px 20px 275px;
+}
+.movieselect .movieinfo{
+    width: 100%;
+    padding: 10px 10px 10px 15px;
+}
+.up{
+    -webkit-animation-name: up;
+    -webkit-animation-duration: 1.5s;
+    animation-name: up;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes up{
+    from {padding-top: 1000px} 
+    to {padding-top: 10px}
+}
+@keyframes up{
+    from {padding-top: 1000px} 
+    to {padding-top: 10px}
+}
+.movieselect .movieinfo .top, .bottom{
+    display: flex;
+    justify-content: flex-start;
+}
+.movieselect .movieinfo img{
+    width: 100%;
+}
+.movieselect .movieinfo .top>div, .movieselect .movieinfo .bottom>div{
+    padding: 10px 10px;
+}
+.movieselect .movieinfo .top .info, .movieselect .movieinfo .bottom .info{
+    padding: 20px 0px 5px 0px;
+}
+.movieselect .movieinfo .image{
+    position: relative;
+}
+.movieselect .movieinfo .image .opa span{
+    position: absolute;
+    top: 80px;
+    left: 47%;
+    color: white;
+    background-color: orangered;
+
+}
+.more{
+    border: 1px orangered solid;
+    position: absolute;
+    right: 20px;
+    padding: 15px 20px 15px 20px;
+}
+.more a{
+    color: orangered;
+}
+.more:hover a{
+    color: white;
+}
+.review{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 100px;
+}
+.review .comment, .review .blog{
+    width: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.review .comment .main, .review .blog .main{
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+}
+.review .comment .main .new, .review .blog .main .new{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    color: rgba(87, 87, 102, 0.8);
+}
+.review .image{
+    position: relative;
+}
+.review .image img{
+    width: 250px;
+    height: 150px;
+}
+.review .title , .promotion .title, .about .title{
+    display: inline-block;
+    padding: 20px 0px 10px 0px;
+    border-bottom: 1px orange solid;
+    margin-bottom: 20px;
+}
+.title a{
+    color: black;
+}
+.review .like button{
+    color: white;
+    background-color: #4267b2;
+    border: 1px #4267b2 solid;
+    border-radius: 10%;
+}
+.review .like:hover button{
+    background-color: #365899;
+    border: 1px #4267b2 solid;
+}
+.promotion{
+    padding-left: 20px;
+}
+.promotion .image{
+    position: relative;
+}
+.promotion .list{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.promotion .list .image{
+    flex: 20%;
+    margin-bottom: 20px;
+    padding-right: 2%
+}
+.promotion .image .opa{
+    width: 90.5% !important;
+    transform: translate(-55.5%, -50%) !important;
+}
+.promotion .image .opa .info{
+    color: white;
+    padding: 10px;
+}
+.promotion .image .opa .button{
+    top: 90% !important;
+}
+.about{
+    padding-left: 20px;
+    margin-right: 20px;
+}
+.about p{
+    font-size: 90%;
+    padding-bottom: 10px;
+    line-height: 20px;
+    word-break: break-word;
+}
+.about a:hover{
+    color: rgba(131, 128, 128, 0.849);
+}
+.footer{
+    background-color: black;
+}
+.footer .top{
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px white solid;
+    padding-bottom: 50px;
+}
+.footer .top .child{
+    color: white;
+    flex: 25%;
+    padding: 50px 0px 0px 20px;
+}
+.footer .top .child h4{
+    border-left: 2px orangered solid;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+.footer .top .child ul{
+    line-height: 30px;
+}
+.footer .social{
+    display: flex;
+    justify-content: flex-start;
+}
+.footer .social li{
+    padding: 10px;
+    font-size: 30px;
+}
+.footer .bottom img{
+    padding: 20px;
+}
+.footer .bottom p{
+    padding: 45px;
+    font-size: 12px;
+    color: white;
+}

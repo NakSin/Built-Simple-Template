@@ -1,0 +1,47 @@
+
+
+.typeForm1{
+    display: flex;
+    justify-content: center;
+}
+
+.col{
+    width: 33.3%;
+}
+
+.col span p{
+    background-color: orangered;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.colitem{
+    display: flex;
+    justify-content: flex-start;
+    height: 10%;
+    position: relative;
+    margin-left: 10px;
+}
+
+.colitem p{
+    position: absolute;
+    top: 24%;
+    right: 0%;
+    bottom: 15%;
+}
+.colitem span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.colitem:active{
+    background-color: rgba(167, 165, 165, 0.4);
+}
+
+.r .colitem, .s .colitem, .r1 .colitem, .s1 .colitem{
+    display: none;
+}
